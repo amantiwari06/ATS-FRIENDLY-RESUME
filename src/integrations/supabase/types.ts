@@ -14,7 +14,149 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ats_analyses: {
+        Row: {
+          created_at: string
+          feedback: Json
+          id: string
+          missing_keywords: Json | null
+          resume_id: string
+          score: number
+          suggestions: Json | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          feedback: Json
+          id?: string
+          missing_keywords?: Json | null
+          resume_id: string
+          score: number
+          suggestions?: Json | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          feedback?: Json
+          id?: string
+          missing_keywords?: Json | null
+          resume_id?: string
+          score?: number
+          suggestions?: Json | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ats_analyses_resume_id_fkey"
+            columns: ["resume_id"]
+            isOneToOne: false
+            referencedRelation: "resumes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_descriptions: {
+        Row: {
+          company: string | null
+          created_at: string
+          description: string
+          id: string
+          required_skills: Json | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          description: string
+          id?: string
+          required_skills?: Json | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          description?: string
+          id?: string
+          required_skills?: Json | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      resumes: {
+        Row: {
+          ats_score: number | null
+          certifications: Json | null
+          created_at: string
+          education: Json | null
+          experience: Json | null
+          id: string
+          last_analyzed_at: string | null
+          personal_info: Json | null
+          skills: Json | null
+          template: string | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ats_score?: number | null
+          certifications?: Json | null
+          created_at?: string
+          education?: Json | null
+          experience?: Json | null
+          id?: string
+          last_analyzed_at?: string | null
+          personal_info?: Json | null
+          skills?: Json | null
+          template?: string | null
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ats_score?: number | null
+          certifications?: Json | null
+          created_at?: string
+          education?: Json | null
+          experience?: Json | null
+          id?: string
+          last_analyzed_at?: string | null
+          personal_info?: Json | null
+          skills?: Json | null
+          template?: string | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
