@@ -39,7 +39,7 @@ const Auth = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background flex items-center justify-center p-4">
       <div className="w-full max-w-md relative">
         <Link to="/">
-          <Button variant="ghost" size="sm" className="absolute -top-12 left-0">
+          <Button variant="ghost" size="sm" className="absolute -top-12 right-0 hover:bg-primary hover:text-primary-foreground transition-colors">
             <Home className="mr-2 h-4 w-4" />
             Home
           </Button>
