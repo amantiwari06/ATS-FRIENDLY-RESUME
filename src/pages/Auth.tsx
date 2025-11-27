@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Home } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -37,11 +37,18 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md relative">
+        <Link to="/">
+          <Button variant="ghost" size="sm" className="absolute -top-12 right-0 hover:bg-primary hover:text-primary-foreground transition-colors">
+            <Home className="mr-2 h-4 w-4" />
+            Home
+          </Button>
+        </Link>
+        
         <div className="text-center mb-8">
           <Link to="/">
             <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              ResumeAI
+              ATS Friendly Resume
             </h1>
           </Link>
           <p className="text-muted-foreground mt-2">Start building your ATS-optimized resume</p>

@@ -11,7 +11,7 @@ const Index = () => {
       <nav className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            ResumeAI
+            ATS Friendly Resume
           </h1>
           <div className="flex items-center gap-4">
             <Link to="/auth">
@@ -169,26 +169,53 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Build Your Perfect Resume?
-          </h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Join thousands of job seekers who've landed their dream jobs with ATS-optimized resumes
-          </p>
-          <Link to="/auth">
-            <Button variant="secondary" size="lg" className="font-semibold">
-              Get Started for Free
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <section className="relative py-20 bg-gradient-to-r from-primary to-accent text-primary-foreground">
+
+  {/* Bottom Left Button - About Us */}
+  <div className="absolute bottom-6 left-6">
+    <Link to="/about">
+      <Button
+        variant="secondary"
+        className="font-semibold hover:scale-110 transition-transform duration-200"
+      >
+        About Us
+      </Button>
+    </Link>
+  </div>
+
+  {/* Bottom Right Button - Contact Us */}
+  <div className="absolute bottom-6 right-6">
+    <Link to="/contact">
+      <Button
+        variant="secondary"
+        className="font-semibold hover:scale-110 transition-transform duration-200"
+      >
+        Contact Us
+      </Button>
+    </Link>
+  </div>
+
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      Ready to Build Your Perfect Resume?
+    </h2>
+
+    <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+      Join thousands of job seekers who've landed their dream jobs with ATS-optimized resumes
+    </p>
+
+    <Link to="/auth">
+      <Button variant="secondary" size="lg" className="font-semibold hover:scale-110 transition-transform duration-200">
+        Get Started for Free
+      </Button>
+    </Link>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="border-t py-8 bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2024 ResumeAI. All rights reserved.</p>
+          <p>&copy; 2025 Team amancodesss. All rights reserved.</p>
         </div>
       </footer>
     </div>
